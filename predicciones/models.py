@@ -1,7 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Prediccion(models.Model):
+    user = models.ForeignKey(User)
     home_team = models.CharField(max_length=50, blank=False)
     home_team_score = models.IntegerField()
     away_team = models.CharField(max_length=50, blank=False)
